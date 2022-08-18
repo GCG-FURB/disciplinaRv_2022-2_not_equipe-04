@@ -4,7 +4,11 @@ Atividades desenvolvidas na disciplina de Computação Gráfica na FURB/DSC/BCC.
 Favor utilizar as respectivas pastas para postar os trabalhos de cada unidade.  
 
 Alunos:  
-Assunto:  
+
+- Computação: Artur Dallagnelo, Leonardo Boss Gomes, Jeferson Bonecher e Sezio Clener Nascimento  
+- Pedagogia: Fernanda Otte Rocha, Priscila Cristina da Silva e Rayssa Farias Munaretti  
+
+Assunto: Metaverso (pode usar RVi/RA/RA): propiciar cooperação / colaboração  
 
 ## [Atividades da Unidade 1](unidade_1 "Atividades da Unidade 1")  
 
