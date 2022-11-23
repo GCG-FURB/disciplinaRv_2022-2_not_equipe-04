@@ -51,11 +51,13 @@ public class Card : Draggable, IResettable, IPointerClickHandler {
 		gameObject.SetActive(true);
 		canvasGroup.blocksRaycasts = false;
 		previousParent = transform.parent;
-		CheckIfItIsEightCard();
+		//CheckIfItIsEightCard();
 		NormalColorCard();
 		ResetActions();
 	}
 
+	//CARTA QUE MUDA DE COR
+	/*
 	private void CheckIfItIsEightCard()
 	{
 		if(cardValue == CardValue.Eight)
@@ -63,7 +65,7 @@ public class Card : Draggable, IResettable, IPointerClickHandler {
 			ChangeCardColor(CardColor.black);
 		}
 	}
-
+	*/
 
 	public void ChangeCardColor(CardColor color)
 	{
