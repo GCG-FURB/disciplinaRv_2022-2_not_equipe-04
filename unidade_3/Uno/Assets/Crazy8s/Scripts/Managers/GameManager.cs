@@ -424,7 +424,7 @@ public class GameManager : MonoBehaviour {
                 }
                 return;
             }
-            */
+            
             switch (card.cardValue)
             {
                 case CardValue.Eight:
@@ -438,7 +438,7 @@ public class GameManager : MonoBehaviour {
                     if (currentPlayer.TryHighlightNextSequenceCard())
                         AddNewMoveToQueue(GamePhase.PassOrDiscardNextSequencedCard);
                     break;
-                /*case CardValue.Ten:
+                case CardValue.Ten:
                     Debug.Log("Dziesiatka extra ruch");
                     AddNewMoveToQueue(GamePhase.TakeOrDiscard);
                     break;
@@ -463,8 +463,8 @@ public class GameManager : MonoBehaviour {
                     break;
                 default:
                     break;
-                */
-            }
+                
+            }*/
         }
     }
 
