@@ -68,7 +68,7 @@ public class DiscardPile : DropZone, IPointerDownHandler {
 
     public bool CheckIfCardCanBePutOnDiscardPile(Card card, Player player)
     {
-        Card topDeckCard = GetTopCardFromDiscardPile();
+        /*Card topDeckCard = GetTopCardFromDiscardPile();
         if (topDeckCard == null)
         {
             Debug.LogError("CheckIfCardCanBePutOnDiscardPile -- Card is null!");
@@ -86,7 +86,8 @@ public class DiscardPile : DropZone, IPointerDownHandler {
 
         if (card.cardValue == topDeckCard.cardValue || card.cardColor == topDeckCard.cardColor)
             return true;
-        return false;
+        return false;*/
+        return true;
     }
 
     public bool IsNextSequencedCard(Card card, Player player)
