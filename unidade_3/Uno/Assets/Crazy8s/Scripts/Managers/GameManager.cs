@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour {
     public Player currentPlayer    { get;  private set; }
     public static Action OnGameFinishedCB;
 
- 
+    
 
     public static GameManager instance;
     public GameObject passBtn;
@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour {
 
     private int _playerTurnDirection;
 
+    private int contadorTurno = 0;
    
     protected int playerTurnDirection
     {
@@ -138,6 +139,8 @@ public class GameManager : MonoBehaviour {
 
     public void StartTwoPlayersGame()
     {
+        contadorTurno = 10;
+
         GamePlayerData[] opponents = {new GamePlayerData("0","janusz",0,1,1,true)};
 
         int seed = Randomizer.GetRandomNumber(0, 10000);// 1000;
@@ -148,6 +151,8 @@ public class GameManager : MonoBehaviour {
   
     public void StartThreePlayersGame()
     {
+        contadorTurno = 20;
+
         GamePlayerData[] opponents = { new GamePlayerData("0", "janusz", 0, 2, 2, true),
             new GamePlayerData("0", "grzybeusz", 0, 0, 0, true)
         };
@@ -159,6 +164,8 @@ public class GameManager : MonoBehaviour {
 
     public void StartFourPlayersGame()
     {
+        contadorTurno = 30;
+
         GamePlayerData[] opponents = { new GamePlayerData("0", "janusz", 0, 2, 3, true),
             new GamePlayerData("0", "grzybeusz", 0, 0, 1, true),
              new GamePlayerData("0", "polemelo", 0, 0, 0, true)
@@ -322,11 +329,20 @@ public class GameManager : MonoBehaviour {
 
     private void NextTurn()
     {
-        IncreasePlayerIndex();
-        AssignNewPlayer();
-        ShowTurnDesc();
-        RecreatePhasesQueue();
-        StartNextPhase();
+        if(contadorTurno > 0)
+        {
+            IncreasePlayerIndex();
+            AssignNewPlayer();
+            ShowTurnDesc();
+            RecreatePhasesQueue();
+            StartNextPhase();
+            contadorTurno--;
+        }
+        else{
+            CloseThisGame();
+        }
+
+        
     }
 
     private void IncreasePlayerIndex()
@@ -395,12 +411,12 @@ public class GameManager : MonoBehaviour {
     {
 
         // Tira a vez do outro jogador - utilizando para poder testar mais rapido
-        SkipNextPlayer(); 
+        //SkipNextPlayer(); 
 
-        /*
+        
         if (IsValidGamePhase(GamePhase.OverbidOrTakePenalties) && currentPlayer.HasCardsToDefend() == false)
             TakePenaltyCards();
-        */
+        
     }
 
     //REMOVE AÇÃO DAS CATAS ESPECIAIS
