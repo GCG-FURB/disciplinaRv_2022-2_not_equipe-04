@@ -134,6 +134,17 @@ public class GameManager : MonoBehaviour {
         deck.OnCardDealtCB += StartGame;
     }
 
+    public void AlterarPlaneta() {
+        GameObject sistemaSolar = new GameObject();
+        sistemaSolar = GameObject.FindWithTag("SistemaSolar");
+        foreach (Transform child in sistemaSolar.transform)
+        {
+            if (child.tag == "Sol") {
+                child.position +=  new Vector3(0, 0, -50);
+            }
+        }
+    }
+
 
     ///TEST FUNCTIONS
 
