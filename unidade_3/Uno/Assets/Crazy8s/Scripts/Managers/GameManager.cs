@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+//using UnityEngine.Random;
+//using System.Random;
+//using UnityEngine.Random.Range;
 
 /// <summary>
 /// Opponent data model
@@ -135,13 +138,67 @@ public class GameManager : MonoBehaviour {
     }
 
     public void AlterarPlaneta() {
+
+        
+        string[] str = { "Sol", "Mercurio", "Venus", "Marte", "Jupiter", "Saturno", "Urano", "Netuno", "Plutao", "Terra" };
+
+        int n = UnityEngine.Random.Range(0, 9);
+
+        //int randomNumber;
+        //Random RNG = new Random();
+        //randomNumber = RNG.next(0, 9);
+
+        //UnityEngine.Random rnd = new UnityEngine.Random();
+        //int n = rnd.Next(0, 9);
+        
+
         GameObject sistemaSolar = new GameObject();
+        GameObject objeto = new GameObject();
         sistemaSolar = GameObject.FindWithTag("SistemaSolar");
+
+
+        objeto = GameObject.FindWithTag("Sol");
+        objeto.transform.position = new Vector3(0, 0, 200);
+        
+        objeto = GameObject.FindWithTag("Mercurio");
+        objeto.transform.position = new Vector3(0, 0, 200);
+
+        objeto = GameObject.FindWithTag("Venus");
+        objeto.transform.position = new Vector3(0, 0, 200);
+
+        objeto = GameObject.FindWithTag("Mercurio");
+        objeto.transform.position = new Vector3(0, 0, 200);
+
+        objeto = GameObject.FindWithTag("Terra");
+        objeto.transform.position = new Vector3(0, 0, 200);
+
+        objeto = GameObject.FindWithTag("Marte");
+        objeto.transform.position = new Vector3(0, 0, 200);
+
+        objeto = GameObject.FindWithTag("Jupiter");
+        objeto.transform.position = new Vector3(0, 0, 200);
+
+        objeto = GameObject.FindWithTag("Saturno");
+        objeto.transform.position = new Vector3(0, 0, 200);
+
+        objeto = GameObject.FindWithTag("Urano");
+        objeto.transform.position = new Vector3(0, 0, 200);
+
+        objeto = GameObject.FindWithTag("Netuno");
+        objeto.transform.position = new Vector3(0, 0, 200);
+
+        objeto = GameObject.FindWithTag("Plutao");
+        objeto.transform.position = new Vector3(0, 0, 200);
+
+
         foreach (Transform child in sistemaSolar.transform)
         {
-            if (child.tag == "Sol") {
-                child.position +=  new Vector3(0, 0, -50);
+
+            if (child.tag == str[n])
+            {
+                child.position = new Vector3(0, 0, 40);
             }
+            
         }
     }
 
@@ -340,18 +397,18 @@ public class GameManager : MonoBehaviour {
 
     private void NextTurn()
     {
-        if(contadorTurno > 0)
-        {
+       // if(contadorTurno > 0)
+        //{
             IncreasePlayerIndex();
             AssignNewPlayer();
             ShowTurnDesc();
             RecreatePhasesQueue();
             StartNextPhase();
-            contadorTurno--;
-        }
-        else{
-            CloseThisGame();
-        }
+          //  contadorTurno--;
+        //}
+        //else{
+            //CloseThisGame();
+        //}
 
         
     }
